@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'styles' %>
+
 <h1><%= @article.title %></h1>
 <p>
   Tags:
@@ -5,6 +7,8 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
+
+<p><%= image_tag @article.image.url %></p>
 <p><%= @article.body %></p>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
